@@ -12,7 +12,7 @@ public class PlayerScriot : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (Input.GetKey("up")) {
-			transform.position += transform.forward * 0.01f;
+			transform.position += transform.forward * 0.05f;
 			animator.SetBool("is_running", true);
 		} else {
 			animator.SetBool("is_running", false);
@@ -23,5 +23,9 @@ public class PlayerScriot : MonoBehaviour {
 		if (Input.GetKey ("left")) {
 			transform.Rotate(0, -10, 0);
 		}
+			
+	}
+	void OnTriggerEnter (Collider colider){
+		transform.position += transform.forward * 0.0f;
 	}
 }
