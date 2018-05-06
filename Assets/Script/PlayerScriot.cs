@@ -25,7 +25,7 @@ public class PlayerScriot : MonoBehaviour {
 		}
 			
 	}
-	void OnTriggerEnter (Collider colider){
-		transform.position += transform.forward * 0.0f;
+	void OnTriggerEnter (Collider other){
+		transform.position = transform.forward * 0.0f;
 	}
 }
