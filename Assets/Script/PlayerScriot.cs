@@ -23,9 +23,9 @@ public class PlayerScriot : MonoBehaviour {
 		if (Input.GetKey ("left")) {
 			transform.Rotate(0, -10, 0);
 		}
-			
-	}
-	void OnTriggerEnter (Collider other){
-		transform.position = transform.forward * 0.0f;
+		void onTriggerEnter(Collider other){
+			GetComponent<Rigidbody>().velocity = new Vector3(0.0f,0.0f,0.0f);
+		}
+	
 	}
 }
