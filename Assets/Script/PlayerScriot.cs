@@ -11,21 +11,35 @@ public class PlayerScriot : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKey("up")) {
+		if (Input.GetKey ("up")) {
 			transform.position += transform.forward * 0.05f;
-			animator.SetBool("is_running", true);
+			animator.SetBool ("is_running", true);
 		} else {
-			animator.SetBool("is_running", false);
+			animator.SetBool ("is_running", false);
 		}
-		if (Input.GetKey("right")) {
-			transform.Rotate(0, 10, 0);
+		if (Input.GetKey ("right")) {
+			transform.Rotate (0, 10, 0);
 		}
 		if (Input.GetKey ("left")) {
-			transform.Rotate(0, -10, 0);
+			transform.Rotate (0, -10, 0);
 		}
-		void onTriggerEnter(Collider other){
+	}
+		void OnTriggerEnter(Collider collider){
 			GetComponent<Rigidbody>().velocity = new Vector3(0.0f,0.0f,0.0f);
+		GetComponent<Rigidbody>().angularVelocity = new Vector3(0.0f,0.0f,0.0f);
+		if (Input.GetKey ("up")) {
+			transform.position += transform.forward * 0.0f;
+			animator.SetBool ("is_running", true);
+		} else {
+			animator.SetBool ("is_running", false);
 		}
+		if (Input.GetKey ("right")) {
+			transform.Rotate (0, 0, 0);
+		}
+		if (Input.GetKey ("left")) {
+			transform.Rotate (0, 0, 0);
+		}
+
+	}
 	
 	}
-}
